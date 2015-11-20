@@ -12,9 +12,7 @@
 
 {% block body_block %}{% endblock body_block %}
 
-{% if settings.SITE_ID == 3 %}
-    {% include "eventlapse/google-analytics-code.html" %}
-{% endif %}
+{% block javascript_block %}{% endblock javascript_block %}
 
 </body>
 </html>
