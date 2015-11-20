@@ -148,8 +148,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    'djangobower.finders.BowerFinder',
-    'compressor.finders.CompressorFinder',
+    # 'djangobower.finders.BowerFinder',
+    # 'compressor.finders.CompressorFinder',
 )
 
 BOWER_COMPONENTS_ROOT = os.path.join(ROOT_PATH, 'components')
