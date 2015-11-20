@@ -148,14 +148,30 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    # 'djangobower.finders.BowerFinder',
+    'djangobower.finders.BowerFinder',
     # 'compressor.finders.CompressorFinder',
 )
 
+NODE_PATH='/usr/local/bin/node'
+BOWER_PATH='/usr/local/bin/bower'
 BOWER_COMPONENTS_ROOT = os.path.join(ROOT_PATH, 'components')
 BOWER_INSTALLED_APPS = (
     'jquery',
     'underscore',
+    'bootstrap',
+    'bootstrap-social',
+    'bootstrap-select',
+    'angular#~1.4.7',
+    'angular-route',
+    'angular-resource',
+    'angular-cookies',
+    "angular-sanitize",
+    'angular-timer',
+    'angular-xeditable',
+    'angular-bootstrap',
+    'angular-google-maps',
+    'ngDialog',
+    'snackbarjs',
 )
 
 # # https://github.com/sunlightlabs/django-honeypot
