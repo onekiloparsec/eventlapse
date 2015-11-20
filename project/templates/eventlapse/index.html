@@ -4,7 +4,7 @@
 {% block body_block %}
     <div class="container">
         <h2>Welcome to eventlapse @ RTS!</h2>
-        <img src="{% static 'eventlapse/map.jpg' %}" class="img-responsive">
+        <div id="map" class="map"></div>
         <section class="grid scrollable">
             <div class="grid__item sm-w-1/2">
                 Here goes the news
@@ -15,3 +15,19 @@
         </section>
     </div>
 {% endblock body_block %}
+
+{% block javascript_block %}
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script>
+        // get the viz.json url from the CartoDB Editor
+        // - click on visualize
+        // - create new visualization
+        // - make visualization public
+        // - click on publish
+        // - go to API tab
+
+        window.onload = function() {
+          cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json');
+        }
+    </script>
+{% endblock javascript_block %}
