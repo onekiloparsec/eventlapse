@@ -3,4 +3,5 @@ venv
 *.mo
 .idea
 staticfiles
-
+node_modules
+.ENV

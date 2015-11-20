@@ -1,10 +1,27 @@
 {
+  "name": "eventlapse",
   "private": true,
-  "dependencies": {
-    "bower": "latest"
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "2.1.x"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onekiloparsec/eventlapse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onekiloparsec/eventlapse/issues"
+  },
+  "homepage": "https://github.com/onekiloparsec/eventlapse#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "kanbasu": "^1.0.2",
+    "browser-sync": "^2.9.12",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.0"
   }
 }
