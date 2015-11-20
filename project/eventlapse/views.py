@@ -6,6 +6,8 @@ from rest_framework import generics
 from project.eventlapse import models
 from project.eventlapse import serializers
 
+import timestring
+
 class IndexView(TemplateView):
     template_name = 'eventlapse/index.html'
     def get_context_data(self, **kwargs):
@@ -16,6 +18,28 @@ class IndexView(TemplateView):
 class ArticleListAPIView(generics.ListAPIView):
     queryset = models.Article.objects.all()
     serializer_class = serializers.ArticleSerializer
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = models.Article.objects.all()
+
+        until = self.request.query_params.get('until', None)
+        if until is not None:
+            until_date = timestring.Date(until).date
+            if until_date is not None:
+                queryset = queryset.filter(date__lte=until_date)
+
+        since = self.request.query_params.get('since', None)
+        if since is not None:
+            since_date = timestring.Date(since).date
+            if since_date is not None:
+                queryset = queryset.filter(date__gte=since_date)
+
+        return queryset
+
 
 class ArticleDetailAPIView(generics.RetrieveAPIView):
     queryset = models.Article.objects.all()
