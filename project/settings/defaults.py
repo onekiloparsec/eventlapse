@@ -103,6 +103,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'djangobower',
+    'corsheaders',
     'project.eventlapse',
 )
 
@@ -226,21 +227,21 @@ REST_FRAMEWORK = {
     )
 }
 
-# CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_ALLOW_HEADERS = (
-#     'x-requested-with',
-#     'content-type',
-#     'accept',
-#     'origin',
-#     'authorization',
-#     'X-CSRFToken',
-#     'accept-encoding',
-#     'accept-language',
-#     'dnt',
-#     'cache-control'
-# )
-#
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = (
+    'x-requested-with',
+    'content-type',
+    'accept',
+    'origin',
+    'authorization',
+    'X-CSRFToken',
+    'accept-encoding',
+    'accept-language',
+    'dnt',
+    'cache-control'
+)
+
 # SWAGGER_SETTINGS = {
 #     'exclude_namespaces': [],
 #     'api_version': '1',
