@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 <!-- Bootstrap -->
-<script type="text/javascript" src="{% static 'eventlapse/js/bootstrap/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
 
 <!-- JS Plugins -->
@@ -23,73 +23,15 @@
 <script type="text/javascript" src="{% static 'webapp/javascripts/webapp.routes.js' %}"></script>
 <script type="text/javascript" src="{% static 'webapp/javascripts/webapp.master.js' %}"></script>
 
-
-<!-- Angular WebApp: Auth -->
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/authentication.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/services/djangoAuth.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/services/validate.js' %}"></script>
-
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/authrequired.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/login.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/logout.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/passwordchange.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/passwordreset.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/passwordresetconfirm.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/register.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/restricted.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/userprofile.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/authentication/controllers/verifyemail.js' %}"></script>
-
-
 <!-- Angular WebApp: Layout -->
 <script type="text/javascript" src="{% static 'webapp/javascripts/layout/layout.module.js' %}"></script>
 <script type="text/javascript" src="{% static 'webapp/javascripts/layout/services/alerts.service.js' %}"></script>
 <script type="text/javascript" src="{% static 'webapp/javascripts/layout/directives/bootstrap.navbar.directive.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/index.www.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/index.observingsites.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/index.archives.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/index.telegrams.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/index.leads.controller.js' %}"></script>
 
-<script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/activity.observingsites.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/layout/controllers/update.observingsite.controller.js' %}"></script>
-
-
-<!-- Angular WebApp: ObservingSites -->
-<script type="text/javascript" src="{% static 'webapp/javascripts/observingsites/observingsites.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/observingsites/services/observingsites.service.js' %}"></script>
-
-<script type="text/javascript" src="{% static 'webapp/javascripts/observingsites/directives/observingsite.directive.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/observingsites/controllers/observingsite.controller.js' %}"></script>
-
-<script type="text/javascript" src="{% static 'webapp/javascripts/observingsites/directives/observingsite.detail.directive.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/observingsites/controllers/observingsite.detail.controller.js' %}"></script>
-
-
-<!-- Angular WebApp: Telescopes -->
-<script type="text/javascript" src="{% static 'webapp/javascripts/telescopes/telescopes.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/telescopes/services/telescopes.service.js' %}"></script>
-
-
-<!-- Angular WebApp: Archives -->
-<script type="text/javascript" src="{% static 'webapp/javascripts/archives/archives.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/archives/services/archives.service.js' %}"></script>
-
-
-<!-- Angular WebApp: Telegrams -->
-<script type="text/javascript" src="{% static 'webapp/javascripts/telegrams/telegrams.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/telegrams/services/telegrams.service.js' %}"></script>
-
-<script type="text/javascript" src="{% static 'webapp/javascripts/telegrams/directives/telegrams.directive.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/telegrams/directives/telegram.directive.js' %}"></script>
-
-<script type="text/javascript" src="{% static 'webapp/javascripts/telegrams/controllers/telegram.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/telegrams/controllers/telegrams.controller.js' %}"></script>
-
-
-<!-- Angular WebApp: Utils -->
-<script type="text/javascript" src="{% static 'webapp/javascripts/utils/utils.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/utils/services/snackbar.service.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/utils/services/times.service.js' %}"></script>
-<script type="text/javascript" src="{% static 'webapp/javascripts/utils/directives/loadingspinner.directive.js' %}"></script>
+{#<!-- Angular WebApp: Utils -->#}
+{#<script type="text/javascript" src="{% static 'webapp/javascripts/utils/utils.module.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'webapp/javascripts/utils/services/snackbar.service.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'webapp/javascripts/utils/services/times.service.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'webapp/javascripts/utils/directives/loadingspinner.directive.js' %}"></script>#}
