@@ -6,7 +6,6 @@ celery==3.1.18
 coverage==3.7.1
 dj-database-url==0.3.0
 dj-static==0.0.6
-django-bower==5.0.4
 djangorestframework==3.2.3
 gunicorn==19.3.0
 kombu==3.0.26

@@ -12,12 +12,13 @@ robots_content = "" if settings.SITE_ID == 3 else "User-agent: *\nDisallow: /"
 urlpatterns = patterns('',
     url(r'^robots\.txt$', lambda r: HttpResponse(robots_content)),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico')),
-
     url(r'^admin/', include(admin.site.urls)),
-
+    url(r'^api/articles/$', views.ArticleListAPIView.as_view(),  name='article-list'),
+    url(r'^api/articles/(?P<pk>\d+)/$', views.ArticleDetailAPIView.as_view(), name='article-detail'),
+    url(r'^api/locations/$', views.LocationListAPIView.as_view(),  name='location-list'),
+    url(r'^api/locations/(?P<pk>\d+)/$', views.LocationDetailAPIView.as_view(), name='location-detail'),
     url(r'^.*$', views.IndexView.as_view(), name='index'),
 )
-
 
 handler404 = 'views.custom_404'
 
