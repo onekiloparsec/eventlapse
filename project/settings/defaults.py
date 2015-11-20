@@ -102,15 +102,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
-    'rest_auth',
-    'meta',
     'djangobower',
     'project.eventlapse',
 )
 
 MIDDLEWARE_CLASSES = (
-    'django_hosts.middleware.HostsRequestMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,7 +118,7 @@ MIDDLEWARE_CLASSES = (
 
 # Hosts
 ALLOWED_HOSTS = ['']
-ROOT_URLCONF = 'project.eventlapse.urls_www'
+ROOT_URLCONF = 'project.eventlapse.urls'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -160,23 +156,6 @@ BOWER_COMPONENTS_ROOT = os.path.join(ROOT_PATH, 'components')
 BOWER_INSTALLED_APPS = (
     'jquery',
     'underscore',
-    'bootstrap',
-    'bootstrap-social',
-    'bootstrap-select',
-    'angular#~1.4.7',
-    'angular-route',
-    'angular-resource',
-    'angular-cookies',
-    "angular-sanitize",
-    'angular-timer',
-    'angular-xeditable',
-    'angular-bootstrap',
-    'angular-google-maps',
-    'ngDialog',
-    'snackbarjs',
-    'uri.js',
-    "json3#~3.2.6",
-    "es5-shim#~2.1.0",
 )
 
 # # https://github.com/sunlightlabs/django-honeypot
@@ -200,7 +179,6 @@ TEMPLATES = [
                 # Already defined Django-related contexts here
                 'django.contrib.messages.context_processors.messages',
                 'django.contrib.auth.context_processors.auth',
-                'django_settings_export.settings_export',
                 'django.core.context_processors.i18n',
 
                 # `allauth` needs this from django

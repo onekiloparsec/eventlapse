@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head>
+    {% include 'eventlapse/base-header.html' %}
+    {% block head_end_block %}{% endblock head_end_block %}
+</head>
+
+<body>
+
+{% block body_block %}{% endblock body_block %}
+
+{% if settings.SITE_ID == 3 %}
+    {% include "eventlapse/google-analytics-code.html" %}
+{% endif %}
+
+</body>
+</html>
