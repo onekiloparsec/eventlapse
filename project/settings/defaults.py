@@ -41,7 +41,7 @@ USE_I18N = True
 USE_L10N = True
 
 TIME_ZONE = 'UTC'
-USE_TZ = True
+USE_TZ = False
 
 from ..utils import get_env_variable
 # Will look in os.environ first, and if None is returned, will look at .env file.

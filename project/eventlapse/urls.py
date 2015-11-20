@@ -18,6 +18,8 @@ urlpatterns = patterns('',
     url(r'^api/articles/(?P<pk>\d+)/$', views.ArticleDetailAPIView.as_view(), name='article-detail'),
     url(r'^api/locations/$', views.LocationListAPIView.as_view(),  name='location-list'),
     url(r'^api/locations/(?P<pk>\d+)/$', views.LocationDetailAPIView.as_view(), name='location-detail'),
+    url(r'^api/articlecounts/$', views.ArticleCountListAPIView.as_view(),  name='articlecount-list'),
+    url(r'^api/articlecounts/(?P<pk>\d+)/$', views.ArticleCountDetailAPIView.as_view(), name='articlecount-detail'),
 )
 
 handler404 = 'views.custom_404'

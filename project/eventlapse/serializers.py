@@ -23,3 +23,7 @@ class ArticleSerializer(serializers.ModelSerializer):
     location = LocationSerializer(required=False)
     category = CategorySerializer(required=True, many=True)
 
+class ArticleCountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ArticleCount
+

@@ -52,3 +52,33 @@ class LocationListAPIView(generics.ListAPIView):
 class LocationDetailAPIView(generics.RetrieveAPIView):
     queryset = models.Article.objects.all()
     serializer_class = serializers.LocationSerializer
+
+
+class ArticleCountListAPIView(generics.ListAPIView):
+    queryset = models.ArticleCount.objects.all()
+    serializer_class = serializers.ArticleCountSerializer
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = models.ArticleCount.objects.all()
+
+        until = self.request.query_params.get('until', None)
+        if until is not None:
+            until_date = timestring.Date(until).date
+            if until_date is not None:
+                queryset = queryset.filter(date__lte=until_date)
+
+        since = self.request.query_params.get('since', None)
+        if since is not None:
+            since_date = timestring.Date(since).date
+            if since_date is not None:
+                queryset = queryset.filter(date__gte=since_date)
+
+        return queryset
+
+class ArticleCountDetailAPIView(generics.RetrieveAPIView):
+    queryset = models.ArticleCount.objects.all()
+    serializer_class = serializers.ArticleCountSerializer

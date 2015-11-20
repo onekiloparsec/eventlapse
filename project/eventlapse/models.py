@@ -27,6 +27,10 @@ class Article(models.Model):
     category = models.ForeignKey(Category, null=True, blank=True, related_name='articles')
     location = models.ForeignKey(Location, null=True, blank=True, related_name='articles')
 
+class ArticleCount(models.Model):
+    start_date = models.DateTimeField(null=True, blank=True)
+    end_date = models.DateTimeField(null=True, blank=True)
+    count = models.IntegerField(null=True, blank=True)
 
 
 
