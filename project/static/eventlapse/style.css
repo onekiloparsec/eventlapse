@@ -2415,5 +2415,10 @@ dl:after,
 .list-stacked--huge > li {
   padding: 38.5px 0; }
 
-h2 {
-  background-color: yellow; }
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; }
+  @media (min-width: 1025px) {
+    .container {
+      width: 960px; } }

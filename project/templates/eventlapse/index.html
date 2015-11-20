@@ -1,5 +1,17 @@
 {% extends 'eventlapse/base.html' %}
+{% load staticfiles %}
 
 {% block body_block %}
-    <h2>Welcome to eventlapse @ RTS!</h2>
+    <div class="container">
+        <h2>Welcome to eventlapse @ RTS!</h2>
+        <img src="{% static 'eventlapse/map.jpg' %}" class="img-responsive">
+        <section class="grid scrollable">
+            <div class="grid__item sm-w-1/2">
+                Here goes the news
+            </div>
+            <div class="grid__item sm-w-1/2">
+                Here goes the twitter feed
+            </div>
+        </section>
+    </div>
 {% endblock body_block %}
