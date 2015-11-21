@@ -7,6 +7,7 @@ from project.eventlapse import models
 from project.eventlapse import serializers
 
 import timestring
+import datetime
 
 class IndexView(TemplateView):
     template_name = 'eventlapse/index.html'
@@ -26,17 +27,26 @@ class ArticleListAPIView(generics.ListAPIView):
         """
         queryset = models.Article.objects.all()
 
-        until = self.request.query_params.get('until', None)
-        if until is not None:
-            until_date = timestring.Date(until).date
-            if until_date is not None:
-                queryset = queryset.filter(date__lte=until_date)
+        day_number = self.request.query_params.get('day_number', None)
+        if day_number is not None:
+            first_article = models.Article.objects.all().order_by("date").first()
+            day_date = first_article.date + datetime.timedelta(int(day_number))
+            day_date_next = day_date + datetime.timedelta(1)
+            queryset = queryset.filter(date__gte=day_date, date__lte=day_date_next)
 
-        since = self.request.query_params.get('since', None)
-        if since is not None:
-            since_date = timestring.Date(since).date
-            if since_date is not None:
-                queryset = queryset.filter(date__gte=since_date)
+        else:
+            until = self.request.query_params.get('until', None)
+            if until is not None:
+                until_date = timestring.Date(until).date
+                if until_date is not None:
+                    queryset = queryset.filter(date__lte=until_date)
+
+            since = self.request.query_params.get('since', None)
+            if since is not None:
+                since_date = timestring.Date(since).date
+                if since_date is not None:
+                    queryset = queryset.filter(date__gte=since_date)
+
 
         return queryset
 
