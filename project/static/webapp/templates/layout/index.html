@@ -12,20 +12,18 @@
     <div class="container">
         <h2><span class="icon-dash"></span>Actualité du {{ date | date:'dd.MM.yyyy' }}</h2>
         <div class="grid">
-            <div class="grid__item sm-w-1/2">
-                <div id="articles-container" ng-repeat="article in articles track by $index">
-                    <a class="card mrgb {{ $index%2 == 0 && 'highlight' }}" target="_blank" href="{{ article.article_url }}" rel="external">
-                        <figure class="card__container">
+            <div class="grid__item sm-w-1/2" ng-repeat="article in articles track by $index">
+                <a class="card mrgb {{ $index%2 == 0 && 'highlight' }}" target="_blank" href="{{ article.article_url }}" rel="external">
+                    <figure class="card__container">
                         <img ng-src="{{ article.photo_url_delayed }}/16x9/scale/width/460" class="card__container__img img-responsive">
-                            <figcaption class="box">
-                                <h3 class="card__container__title">{{ article.title }}</h3>
-                                <ul class="card__container__meta-data list">
-                                    <li>Publié le {{ article.date | date:'dd.mm.yy à HH:mm' }}</li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
+                        <figcaption class="box">
+                            <h3 class="card__container__title">{{ article.title }}</h3>
+                            <ul class="card__container__meta-data list">
+                                <li>Publié le {{ article.date | date:'dd.mm.yy à HH:mm' }}</li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </a>
             </div>
         </div>
     </div>
