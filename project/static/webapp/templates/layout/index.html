@@ -1,48 +1,69 @@
-<h2>Welcome to eventlapse @ RTS!</h2>
+<div class="container">
+    <h2>Welcome to eventlapse @ RTS!</h2>
 
-<div id="map" class="map"></div>
-<div id="slider"></div>
-<div id="chart"></div>
+    <div id="map" class="map"></div>
+    <div id="slider"></div>
+    <div id="chart"></div>
 
-<div class="row">
-    <div class="col-md-12 text-center">
-        <h2>{{ date | date:'dd MM yyyy' }}</h2>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-10" id="articles-container">
-        <div class="table-responsive">
-            <table class="table" style="border-collapse:collapse;">
-
-                <tbody ng-repeat="article in articles track by $index">
-                <tr class="{{ $index%2 == 0 && 'highlight' }}">
-                    <td>
-                        <img ng-src="{{ article.photo_url }}/16x9/scale/width/100" width=100px;>
-                    </td>
-
-                    <td>
-                        <a target="_blank" href="{{ article.article_url }}" rel="external">{{ article.title }}</a>
-                    </td>
-
-                    <td>
-                        {{ article.introduction }}
-                    </td>
-                </tr>
-
-                </tbody>
-            </table>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>{{ date | date:'dd MM yyyy' }}</h2>
         </div>
     </div>
+
+    <div class="row">
+
+    </div>
+
+
+    <section class="grid scrollable">
+        <div class="grid__item sm-w-1/2">
+            <div id="articles-container">
+                <div class="table-responsive">
+                    <table class="table" style="border-collapse:collapse;">
+
+                        <tbody ng-repeat="article in articles track by $index">
+                        <tr class="{{ $index%2 == 0 && 'highlight' }}">
+                            <td>
+                                <img ng-src="{{ article.photo_url }}/16x9/scale/width/100" width=100px;>
+                            </td>
+
+                            <td>
+                                <a target="_blank" href="{{ article.article_url }}" rel="external">{{ article.title }}</a>
+                            </td>
+
+                            <td>
+                                {{ article.introduction }}
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid__item sm-w-1/2">
+            <div id="articles-container">
+                <div class="table-responsive">
+                    <table class="table" style="border-collapse:collapse;">
+
+                        <tbody ng-repeat="tweet in tweets track by $index">
+                        <tr class="{{ $index%2 == 0 && 'highlight' }}">
+                            <td>
+                                {{ tweet.user.screen_name }}
+                            </td>
+
+                            <td>
+                                {{ tweet.text }}
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
-
-
-<section class="grid scrollable">
-    <div class="grid__item sm-w-1/2">
-        Here goes the news
-    </div>
-    <div class="grid__item sm-w-1/2">
-        Here goes the twitter feed
-    </div>
-</section>
-

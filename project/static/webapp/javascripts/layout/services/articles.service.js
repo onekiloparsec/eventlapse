@@ -5,22 +5,20 @@
         .module('webapp.layout.services')
         .factory('ArticlesService', ArticlesService);
 
-    ArticlesService.$inject = ['$http', '$window'];
+    ArticlesService.$inject = ['$http'];
 
-    function ArticlesService($http, $window) {
+    function ArticlesService($http) {
         var ArticlesService = {
             all: all,
             get: get
         };
-
-        ArticlesService.root_url = "http://eventlapse-prod.herokuapp.com/api/";
 
         return ArticlesService;
 
         ////////////////////
 
         function all(day_number) {
-            var url = ArticlesService.root_url + "articles/";
+            var url = "/api/articles/";
             if (day_number !== undefined) {
                 url += "?day_number="+day_number;
             }
@@ -28,7 +26,7 @@
         }
 
         function get(id, config) {
-            return $http.get(ArticlesService.root_url + 'articles/' + id + '/', config);
+            return $http.get('/api/articles/' + id + '/', config);
         }
     }
 })();
