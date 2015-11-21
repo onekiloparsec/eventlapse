@@ -42,11 +42,11 @@
                     })])
                     .range([0, h]);
 
-                var xAxis = d3.svg.axis().scale(xLabels).ticks(d3.time.months).tickFormat(d3.time.format("%B")).tickSize(-h).tickSubdivide(true);
-                svg.append("svg:g")
-                    .attr("class", "x axis")
-                    .attr("transform", "translate(0," + h + ")")
-                    .call(xAxis);
+                //var xAxis = d3.svg.axis().scale(xLabels).ticks(d3.time.months).tickFormat(d3.time.format("%B")).tickSize(-h).tickSubdivide(true);
+                //svg.append("svg:g")
+                //    .attr("class", "x axis")
+                //    .attr("transform", "translate(0," + h + ")")
+                //    .call(xAxis);
 
                 var yAxisLeft = d3.svg.axis().scale(yScale).ticks(7).tickFormat("%.f").orient("left");
                 svg.append("svg:g")
