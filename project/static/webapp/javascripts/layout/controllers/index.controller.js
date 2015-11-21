@@ -5,12 +5,13 @@
         .module('webapp.layout.controllers')
         .controller('IndexController', IndexController);
 
-    IndexController.$inject = ['$scope', '$routeParams'];
+    IndexController.$inject = ['$scope', '$routeParams', 'ArticlesService'];
 
-    function IndexController($scope, $routeParams) {
+    function IndexController($scope, $routeParams, ArticlesService) {
         var ctlr = this;
         cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json');
         activate();
+        $scope.articles = undefined;
 
         function activate() {
 
@@ -27,6 +28,16 @@
                 }
             });
 
+            ArticlesService.all(1).then(successFn, errorFn);
+
+            function successFn(response, status, headers, config) {
+                $scope.articles = response.data;
+            }
+
+            function errorFn(response, status, headers, config) {
+                console.log(response.error);
+            }
+            
             function createArticleCountChart(dataset) {
                 var w = $('#map').width(), h = 50;
 

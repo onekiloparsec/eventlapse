@@ -4,6 +4,29 @@
 <div id="slider"></div>
 <div id="chart"></div>
 
+<div class="row">
+    <div class="col-md-10" id="articles-container">
+        <div class="table-responsive">
+            <table class="table" style="border-collapse:collapse;">
+
+                <tbody ng-repeat="article in articles track by $index">
+                <tr class="{{ $index%2 == 0 && 'highlight' }}">
+                    <td>
+                        <a target="_blank" href="{{ article.article_url }}" rel="external">{{ article.title }}</a>
+                    </td>
+
+                    <td>
+                        {{ article.introduction }}
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
 <section class="grid scrollable">
     <div class="grid__item sm-w-1/2">
         Here goes the news
