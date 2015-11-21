@@ -6,9 +6,10 @@
 <head>
     {% include 'eventlapse/base-header.html' %}
     {% block head_end_block %}{% endblock head_end_block %}
+    <base href="/" />
 </head>
 
-<body>
+<body ng-app="webapp">
 
 {% block body_block %}{% endblock body_block %}
 {% block javascript_block %}{% endblock javascript_block %}

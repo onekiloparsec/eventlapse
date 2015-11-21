@@ -4,9 +4,8 @@
     angular
         .module('webapp', [
             'webapp.config',
-            'webapp.master',
+            'webapp.filters',
             'webapp.routes',
-            'webapp.utils',
             'webapp.layout'
         ]);
 
@@ -15,9 +14,6 @@
 
     angular
         .module('webapp.filters', []);
-
-    angular
-        .module('webapp.master', []);
 
     angular
         .module('webapp.routes', ['ngRoute']);

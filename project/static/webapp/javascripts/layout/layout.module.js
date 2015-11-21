@@ -5,7 +5,6 @@
         .module('webapp.layout', [
             'webapp.layout.services',
             'webapp.layout.controllers',
-            'webapp.layout.directives'
         ]);
 
     angular
@@ -13,8 +12,5 @@
 
     angular
         .module('webapp.layout.controllers', ['timer', 'ui.bootstrap']);
-
-    angular
-        .module('webapp.layout.directives', []);
 
 })();
