@@ -73,7 +73,7 @@
             }
 
             function createArticleCountChart(dataset) {
-                var w = $('#map').width(), h = 50;
+                var w = $('#slider').width(), h = 50;
 
                 var svg = d3.select("#chart")
                     .append("svg")
