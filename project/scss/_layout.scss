@@ -21,6 +21,12 @@
     background-color: #fff;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 
+    font-size: 35px;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 2.441em;
+    }
+
     a {
       padding: 5px;
 
