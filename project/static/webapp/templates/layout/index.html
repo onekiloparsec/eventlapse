@@ -1,67 +1,28 @@
 <div class="container">
     <h2>Welcome to eventlapse @ RTS!</h2>
 
-    <div id="map" class="map"></div>
+    <div class="map">
+        <div id="map" class="map__container"></div>
+    </div>
     <div id="slider"></div>
     <div id="chart"></div>
 
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h2>{{ date | date:'dd MM yyyy' }}</h2>
-        </div>
-    </div>
-
-    <div class="row">
-
-    </div>
-
-
+    <h2 class="text-center">{{ date | date:'dd MM yyyy' }}</h2>
     <section class="grid scrollable">
         <div class="grid__item sm-w-1/2">
-            <div id="articles-container">
-                <div class="table-responsive">
-                    <table class="table" style="border-collapse:collapse;">
-
-                        <tbody ng-repeat="article in articles track by $index">
-                        <tr class="{{ $index%2 == 0 && 'highlight' }}">
-                            <td>
-                                <img ng-src="{{ article.photo_url }}/16x9/scale/width/100" width=100px;>
-                            </td>
-
-                            <td>
-                                <a target="_blank" href="{{ article.article_url }}" rel="external">{{ article.title }}</a>
-                            </td>
-
-                            <td>
-                                {{ article.introduction }}
-                            </td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid__item sm-w-1/2">
-            <div id="articles-container">
-                <div class="table-responsive">
-                    <table class="table" style="border-collapse:collapse;">
-
-                        <tbody ng-repeat="tweet in tweets track by $index">
-                        <tr class="{{ $index%2 == 0 && 'highlight' }}">
-                            <td>
-                                {{ tweet.user.screen_name }}
-                            </td>
-
-                            <td>
-                                {{ tweet.text }}
-                            </td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
+            <div id="articles-container" ng-repeat="article in articles track by $index">
+                <a class="card mrgb {{ $index%2 == 0 && 'highlight' }}" target="_blank" href="{{ article.article_url }}" rel="external">
+                    <figure class="card__container">
+                        <!-- {{ article.photo_url }}/16x9/scale/width/100 -->
+                        <img ng-src="/static/eventlapse/placeholder.jpeg" class="card__container__img img-responsive">
+                        <figcaption class="box">
+                            <h3 class="card__container__title">{{ article.title }}</h3>
+                            <ul class="card__container__meta-data list">
+                                <li>Publié le {{ article.date | date:'dd.mm.yy à HH:mm' }}</li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </a>
             </div>
         </div>
     </section>
