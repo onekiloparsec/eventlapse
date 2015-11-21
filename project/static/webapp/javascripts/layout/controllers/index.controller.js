@@ -40,6 +40,13 @@
             function articlesSuccessFn(response, status, headers, config) {
                 $scope.articles = response.data;
                 if ($scope.articles.length > 0) {
+
+                    // Get all article ids.
+                    var articleIds = [];
+                    $scope.articles.forEach(function (article) {
+                        articleIds.push(article.id);
+                    });
+
                     $scope.date = $scope.articles[0].date;
                 }
                 else {
