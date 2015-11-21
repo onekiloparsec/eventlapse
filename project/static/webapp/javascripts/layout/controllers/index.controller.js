@@ -28,6 +28,11 @@
                     ArticlesService.all(ui.value).then(articlesSuccessFn, errorFn);
                 },
                 stop: function( event, ui ) {
+                    setTimeout(function() {
+                        for(var i=0;i<$scope.articles.length;i++) {
+                            $scope.articles[i]['photo_url_delayed'] = $scope.articles[i]['photo_url'];
+                        }
+                    }, 1000);
                     TweetsService.all(ui.value).then(tweetsSuccessFn, errorFn);
                 }
             });

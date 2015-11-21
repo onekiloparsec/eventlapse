@@ -16,8 +16,7 @@
                 <div id="articles-container" ng-repeat="article in articles track by $index">
                     <a class="card mrgb {{ $index%2 == 0 && 'highlight' }}" target="_blank" href="{{ article.article_url }}" rel="external">
                         <figure class="card__container">
-                            <!-- {{ article.photo_url }}/16x9/scale/width/100 -->
-                            <img ng-src="/static/eventlapse/placeholder.jpeg" class="card__container__img img-responsive">
+                        <img ng-src="{{ article.photo_url_delayed }}/16x9/scale/width/460" class="card__container__img img-responsive">
                             <figcaption class="box">
                                 <h3 class="card__container__title">{{ article.title }}</h3>
                                 <ul class="card__container__meta-data list">
