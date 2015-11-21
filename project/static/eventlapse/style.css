@@ -2460,6 +2460,24 @@ h2 {
   border: 1px solid #dfdfdf;
   border-radius: inherit; }
 
+.navbar {
+  height: 75px;
+  text-align: center;
+  background-image: url("//www.rts.ch/2015/06/23/08/26/6887998.image");
+  background-position: center center; }
+
+.navbar__logo {
+  position: relative;
+  top: 12px;
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); }
+  .navbar__logo a {
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000; }
+
 .container {
   width: 100%;
   margin-right: auto;
