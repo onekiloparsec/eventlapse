@@ -24,11 +24,9 @@
                 max: 1856,
                 min: 0,
                 slide: function( event, ui ) {
-                    console.log(ui.value);
+                    ArticlesService.all(ui.value).then(successFn, errorFn);
                 }
             });
-
-            ArticlesService.all(1).then(successFn, errorFn);
 
             function successFn(response, status, headers, config) {
                 $scope.articles = response.data;
@@ -37,7 +35,7 @@
             function errorFn(response, status, headers, config) {
                 console.log(response.error);
             }
-            
+
             function createArticleCountChart(dataset) {
                 var w = $('#map').width(), h = 50;
 
