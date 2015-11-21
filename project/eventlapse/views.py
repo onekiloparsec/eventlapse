@@ -65,17 +65,11 @@ class ArticleCountListAPIView(generics.ListAPIView):
         """
         queryset = models.ArticleCount.objects.all()
 
-        until = self.request.query_params.get('until', None)
-        if until is not None:
-            until_date = timestring.Date(until).date
-            if until_date is not None:
-                queryset = queryset.filter(date__lte=until_date)
-
-        since = self.request.query_params.get('since', None)
-        if since is not None:
-            since_date = timestring.Date(since).date
-            if since_date is not None:
-                queryset = queryset.filter(date__gte=since_date)
+        days = self.request.query_params.get('days', None)
+        if days is None:
+            queryset = queryset.filter(days__gte=28)
+        else:
+            queryset = queryset.filter(days=days)
 
         return queryset
 
