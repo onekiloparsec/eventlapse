@@ -49,8 +49,13 @@
                     // Get all article ids.
                     var articleIds = [];
                     $scope.articles.forEach(function (article) {
-                        articleIds.push(article.id);
+                        console.log();
+                        articleIds.push(article.identifier);
                     });
+
+                    // Filters articles on the map.
+                    var request = 'SELECT * FROM cartodb_merge WHERE id IN (' + articleIds.join(',') + ')';
+                    mapLayers[1].getSubLayer(0).setSQL(request);
 
                     $scope.date = $scope.articles[0].date;
                 }
