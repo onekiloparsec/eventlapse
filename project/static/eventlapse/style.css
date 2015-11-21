@@ -2471,7 +2471,11 @@ h2 {
   top: 12px;
   display: inline-block;
   background-color: #fff;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); }
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-size: 35px; }
+  @media (min-width: 1025px) {
+    .navbar__logo {
+      font-size: 2.441em; } }
   .navbar__logo a {
     padding: 5px;
     text-transform: uppercase;
@@ -2488,7 +2492,6 @@ h2 {
 
 .section--highlight {
   position: relative;
-  min-height: 500px;
   margin-top: 50px;
   background: #f4f4f4; }
   .section--highlight:before {
