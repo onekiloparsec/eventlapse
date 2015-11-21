@@ -16,3 +16,7 @@
     stroke: #000;
     shape-rendering: crispEdges;
 }
+
+.highlight {
+    background-color: #F9F9F9;
+}

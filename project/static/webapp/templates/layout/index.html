@@ -5,12 +5,22 @@
 <div id="chart"></div>
 
 <div class="row">
+    <div class="col-md-12 text-center">
+        <h2>{{ date | date:'dd MM yyyy' }}</h2>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-md-10" id="articles-container">
         <div class="table-responsive">
             <table class="table" style="border-collapse:collapse;">
 
                 <tbody ng-repeat="article in articles track by $index">
                 <tr class="{{ $index%2 == 0 && 'highlight' }}">
+                    <td>
+                        <img ng-src="{{ article.photo_url }}/16x9/scale/width/100" width=100px;>
+                    </td>
+
                     <td>
                         <a target="_blank" href="{{ article.article_url }}" rel="external">{{ article.title }}</a>
                     </td>

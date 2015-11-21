@@ -22,7 +22,7 @@
 
             $( "#slider" ).slider({
                 max: 1856,
-                min: 0,
+                min: 1,
                 slide: function( event, ui ) {
                     ArticlesService.all(ui.value).then(successFn, errorFn);
                 }
@@ -30,6 +30,12 @@
 
             function successFn(response, status, headers, config) {
                 $scope.articles = response.data;
+                if ($scope.articles.length > 0) {
+                    $scope.date = $scope.articles[0].date;
+                }
+                else {
+                    $scope.date = undefined;
+                }
             }
 
             function errorFn(response, status, headers, config) {
