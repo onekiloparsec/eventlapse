@@ -153,8 +153,6 @@ STATICFILES_FINDERS = (
     # 'compressor.finders.CompressorFinder',
 )
 
-NODE_PATH='/usr/local/bin/node'
-BOWER_PATH='/usr/local/bin/bower'
 BOWER_COMPONENTS_ROOT = os.path.join(ROOT_PATH, 'components')
 BOWER_INSTALLED_APPS = (
     'jquery',
