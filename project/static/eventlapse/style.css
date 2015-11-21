@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/**
+ * EventLapse
+ */
 /*!
  *  カンバス KANBASU
  *  Distributed under the MIT License
@@ -2415,10 +2418,16 @@ dl:after,
 .list-stacked--huge > li {
   padding: 38.5px 0; }
 
+figure {
+  margin: 0; }
+
+h2 {
+  margin-top: 0; }
+
 .card {
   display: block;
   text-decoration: none;
-  border: 3px solid #f6f6f6;
+  border: 3px solid #ecedee;
   border-radius: 4px; }
 
 .card__container {
@@ -2450,12 +2459,6 @@ dl:after,
   background-color: #fff;
   border: 1px solid #dfdfdf;
   border-radius: inherit; }
-
-figure {
-  margin: 0; }
-
-h2 {
-  margin-top: 0; }
 
 .container {
   width: 100%;
