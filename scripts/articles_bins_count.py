@@ -53,6 +53,9 @@ for start_date, end_date in enumerate_days_dates(start_date, end_date):
 	ac.days = delta.days
 	ac.save()
 	
+start_date = datetime.datetime(2010, 12, 01)
+end_date = datetime.datetime(2016, 01, 01)
+	
 for start_date, end_date in enumerate_weeks_dates(start_date, end_date):
 	articles = Article.objects.filter(date__gte=start_date, date__lt=end_date)
 	delta = end_date-start_date
