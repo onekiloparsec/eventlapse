@@ -9,7 +9,7 @@
 
     function IndexController($scope, $routeParams, ArticlesService, TweetsService) {
         var ctlr = this;
-        cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json');
+        cartodb.createVis('map', 'http://eventlapse.cartodb.com/api/v2/viz/47413b28-903d-11e5-8333-0e5db1731f59/viz.json');
         activate();
         $scope.articles = undefined;
 
