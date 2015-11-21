@@ -99,7 +99,7 @@ import twitter
 import requests
 import base64
 import urllib2
-from utils import get_env_variable
+from ..utils import get_env_variable
 
 twitter_bearer = None
 
