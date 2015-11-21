@@ -1,0 +1,27 @@
+//
+// Card
+// ====
+//
+
+.card {
+  display: block;
+
+  text-decoration: none;
+
+  border: 3px solid #f6f6f6;
+  border-radius: 4px;
+}
+
+  .card__container {
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: inherit;
+  }
+
+    .card__container__title {
+      color: #000;
+    }
+
+    .card__container__meta-data {
+      font-size: 14px;
+    }
