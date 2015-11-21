@@ -60,11 +60,11 @@ class ArticleDetailAPIView(generics.RetrieveAPIView):
     serializer_class = serializers.ArticleSerializer
 
 class LocationListAPIView(generics.ListAPIView):
-    queryset = models.Article.objects.all()
+    queryset = models.Location.objects.all()
     serializer_class = serializers.LocationSerializer
 
 class LocationDetailAPIView(generics.RetrieveAPIView):
-    queryset = models.Article.objects.all()
+    queryset = models.Location.objects.all()
     serializer_class = serializers.LocationSerializer
 
 

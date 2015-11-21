@@ -10,18 +10,13 @@ class CategorySerializer(serializers.ModelSerializer):
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Location
-
-    articles = serializers.HyperlinkedIdentityField(many=True,
-                                                    read_only=True,
-                                                    view_name='article-detail',)
-
+        fields = ('id', 'name', 'longitude', 'latitude')
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Article
 
-    location = LocationSerializer(required=False)
-    category = CategorySerializer(required=True, many=True)
+    locations = LocationSerializer(required=False)
 
 class ArticleCountSerializer(serializers.ModelSerializer):
     class Meta:
