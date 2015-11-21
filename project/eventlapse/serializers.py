@@ -15,8 +15,7 @@ class LocationSerializer(serializers.ModelSerializer):
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Article
-
-    locations = LocationSerializer(required=False)
+    locations = LocationSerializer(required=False, many=True)
 
 class ArticleCountSerializer(serializers.ModelSerializer):
     class Meta:
